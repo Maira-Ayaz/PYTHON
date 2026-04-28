@@ -7,9 +7,6 @@ def calculator(a,b,operation):
        return(a*b)
     elif operation==("divide"):
        if b==0:
-          return"not divisible"
-       return(a/b)
-print(calculator(9,0,"sub"))
-print(calculator(10,8,"mul"))
-print(calculator(8,0,"divide"))
-print(calculator(10,8,"add"))
+          print("not divisible")
+       else: 
+          return(a/b)
