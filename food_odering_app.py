@@ -6,6 +6,10 @@ menu = {
 }
 
 cart = {}
+#save to the file
+def save_order(item, qty):
+    with open("orders.txt", "a") as file:
+        file.write(f"{item} x {qty}\n")
 
 # Show menu
 def show_menu():
@@ -22,6 +26,8 @@ def add_item():
             cart[item] += qty
         else:
             cart[item] = qty
+            save_order(item,qty)
+    
         print("Added to cart")
     else:
         print("Item not found")
