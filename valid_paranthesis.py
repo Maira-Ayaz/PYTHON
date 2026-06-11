@@ -1,0 +1,26 @@
+#Given a string s containing only '(', ')', '{', '}', '[', ']', determine if the input string is valid. Open brackets must be closed in the correct order.
+def isValid(s):
+    stack = []
+
+    for ch in s:
+        if ch == '(' or ch == '{' or ch == '[':
+            stack.append(ch)
+
+        else:
+            if len(stack) == 0:
+                return False
+
+            top = stack.pop()
+
+            if ch == ')' and top != '(':
+                return False
+
+            if ch == '}' and top != '{':
+                return False
+
+            if ch == ']' and top != '[':
+                return False
+
+    return len(stack) == 0
+
+print(isValid("()"))
